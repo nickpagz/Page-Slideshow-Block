@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "np-block/page-slideshow-block",
+  "version": "0.1.0",
+  "title": "Page Slideshow Block",
+  "category": "widgets",
+  "icon": "images-alt",
+  "description": "Use a regular page to build a slide show.",
+  "supports": {
+    "html": false,
+    "align": true,
+    "anchor": true
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "textdomain": "np-slideshow-block",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
