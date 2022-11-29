@@ -1,0 +1,59 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-site-blocks {
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+ }
+
+.wp-block-np-block-page-slideshow-block {
+
+	margin-block-start: 0 !important;
+
+	.wp-block-cover {
+		border-bottom: 1px solid grey;
+        min-height: calc(100vh + 1px) !important;
+		max-height: calc(100vh + 1px) !important;
+        
+        .wp-block-cover__inner-container {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+        }
+
+		.block-editor-block-list__layout.is-layout-flex {
+			width: auto;
+		}
+	}
+
+	.wp-block-np-block-page-slideshow-prev,
+	.wp-block-np-block-page-slideshow-next {
+		cursor: pointer;
+
+		p {
+			margin-block-start: 0.5em;
+			margin-block-end: 0.5em;
+		}
+	}
+}
+
+.wp-block-group {
+
+    /* Block Style: Full Height Stack
+     *
+     * This style is not directly accessible in the UI.
+     --------------------------------------------- */
+
+    &.is-style-full-height-stack {
+        height: 100%;
+        justify-content: space-between;
+
+        &> .wp-block-group {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-site-blocks {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.wp-block-np-block-page-slideshow-block {
+  -webkit-margin-before: 0 !important;
+          margin-block-start: 0 !important;
+}
+.wp-block-np-block-page-slideshow-block .wp-block-cover {
+  border-bottom: 1px solid grey;
+  min-height: calc(100vh + 1px) !important;
+  max-height: calc(100vh + 1px) !important;
+}
+.wp-block-np-block-page-slideshow-block .wp-block-cover .wp-block-cover__inner-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.wp-block-np-block-page-slideshow-block .wp-block-cover .block-editor-block-list__layout.is-layout-flex {
+  width: auto;
+}
+.wp-block-np-block-page-slideshow-block .wp-block-np-block-page-slideshow-prev,
+.wp-block-np-block-page-slideshow-block .wp-block-np-block-page-slideshow-next {
+  cursor: pointer;
+}
+.wp-block-np-block-page-slideshow-block .wp-block-np-block-page-slideshow-prev p,
+.wp-block-np-block-page-slideshow-block .wp-block-np-block-page-slideshow-next p {
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+  -webkit-margin-after: 0.5em;
+          margin-block-end: 0.5em;
+}
+
+.wp-block-group {
+  /* Block Style: Full Height Stack
+   *
+   * This style is not directly accessible in the UI.
+   --------------------------------------------- */
+}
+.wp-block-group.is-style-full-height-stack {
+  height: 100%;
+  justify-content: space-between;
+}
+.wp-block-group.is-style-full-height-stack > .wp-block-group {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
