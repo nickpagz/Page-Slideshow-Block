@@ -36,3 +36,52 @@ function np_slideshow_block_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'np_slideshow_block_enqueue_scripts' );
+
+register_activation_hook( __FILE__, 'np_slideshow_block_plugin_install' );
+
+function np_slideshow_block_plugin_install() {
+	global $wpdb;
+
+	// Set post details
+	$the_page_title = 'Blank Slide';
+	$the_page_name  = 'wp-custom-template-np-blank-slide';
+
+	// Check if template exists
+	$post_args       = array(
+		'post_type' => 'wp_template',
+	);
+	$template_posts  = get_posts( $post_args );
+	$template_exists = in_array( $the_page_name, array_column( $template_posts, 'post_name' ), true );
+
+	if ( ! $template_exists ) {
+
+		// Get all FSE themes
+		$taxonomies = get_terms(
+			array(
+				'taxonomy'   => 'wp_theme',
+				'hide_empty' => false,
+			)
+		);
+		$term_ids   = array_column( $taxonomies, 'term_id' );
+
+		// Create post object
+		$_p                   = array();
+		$_p['post_title']     = $the_page_title;
+		$_p['post_name']      = $the_page_name;
+		$_p['post_content']   = '<!-- wp:post-content /-->';
+		$_p['post_status']    = 'publish';
+		$_p['post_type']      = 'wp_template';
+		$_p['comment_status'] = 'closed';
+		$_p['ping_status']    = 'closed';
+		$_p['tax_input']      = array(
+			'wp_theme' => $term_ids,
+		);
+
+		// Insert the post into the database
+		$the_page_id = wp_insert_post( $_p );
+
+		// Add post_meta
+		add_post_meta( $the_page_id, 'is_wp_suggestion', '' );
+
+	}
+}
